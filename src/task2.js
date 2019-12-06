@@ -1,4 +1,4 @@
-const { getRandomWordSync, getRandomWord } = require('word-maker');
+const { getRandomWordSync } = require('word-maker');
 
 class Task2{
   printFizzBuzz(){
