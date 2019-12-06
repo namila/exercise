@@ -1,5 +1,6 @@
-const { getRandomWordSync, getRandomWord } = require('word-maker');
+const Task1  = require('./task1');
 
-console.log('It works!');
+const task1 = new Task1();
+task1.printNumbers();
 
-// YOUR CODE HERE
+
