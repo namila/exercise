@@ -2,7 +2,7 @@ const { getRandomWord } = require('word-maker');
 
 class Task3{
   async printNumbersAsync(){
-    let promiseSet = [];
+  
     for(let i = 1; i < 101; ++i){
       const word =  await getRandomWord();
       console.log(i + ": " + word);
