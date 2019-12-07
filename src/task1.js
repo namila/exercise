@@ -1,5 +1,7 @@
 const { getRandomWordSync } = require('word-maker');
-const Writer = require('./writer');
+
+// Utility to write to console / file
+const Writer = require('./writer'); 
 
 class Task1{
 

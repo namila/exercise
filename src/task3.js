@@ -1,4 +1,6 @@
 const { getRandomWord } = require('word-maker');
+
+// Utility to write to console / file
 const Writer = require('./writer');
 
 
