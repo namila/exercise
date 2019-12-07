@@ -1,11 +1,13 @@
 const { getRandomWordSync } = require('word-maker');
+const Writer = require('./writer');
 
 class Task1{
 
-  printNumbers(){
+  printNumbers({ writeToFile = false } = {}){
+    const writer = new Writer();
 
     for(let i = 1; i < 101; ++i){
-      console.log(i + ": " + getRandomWordSync());
+      writer.write({content: i + ': ' + getRandomWordSync(), writeToFile: writeToFile});
     }
   }
 }

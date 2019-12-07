@@ -1,28 +1,33 @@
 const { getRandomWord } = require('word-maker');
+const Writer = require('./writer');
+
 
 class Task3{
-  async printNumbersAsync(){
-  
+  async printNumbersAsync({ writeToFile = false } = {}){
+    const writer = new Writer();
+    
     for(let i = 1; i < 101; ++i){
       const word =  await getRandomWord();
-      console.log(i + ": " + word);
+      writer.write({content: i + ': ' + word, writeToFile: writeToFile});
     }
   }
 
-  async printFizzBuzzAsync(){
+  async printFizzBuzzAsync({ writeToFile = false } = {}){
+    const writer = new Writer();
+    
     for(let i = 1; i < 101; ++i){
       
       if(i % 3 == 0 && i % 5 == 0){
-        console.log(i + ": " + "FizzBuzz");
+        writer.write({content: i + ': FizzBuzz', writeToFile: writeToFile});
       }
       else if (i % 3 == 0){
-        console.log(i + ": " + "Fizz");        
+        writer.write({content: i + ': Fizz', writeToFile: writeToFile});        
       }
       else if (i % 5 == 0) {
-        console.log(i + ": " + "Buzz");                
+        writer.write({ content: i + ': Buzz', writeToFile: writeToFile});                
       } else{
         const word = await getRandomWord();
-        console.log(i + ": " + word);        
+        writer.write({content: i + ': ' + word, writeToFile: writeToFile});        
       }
     }
   }
